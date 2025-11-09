@@ -1,6 +1,6 @@
 <?php
 
-namespace classes;
+namespace WP_Iching;
 
 use App\FortuneTeller\FortuneTeller;
 

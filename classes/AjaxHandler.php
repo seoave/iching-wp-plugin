@@ -1,13 +1,13 @@
 <?php
-
-namespace Iching;
+// TODO experimental handler
+namespace WP_Iching;
 
 class AjaxHandler
 {
     const ACTION = 'iching';
     const NONCE = 'iching-ajax';
 
-    public static function register()
+    public static function register(): void
     {
         $handler = new self();
 
@@ -16,14 +16,14 @@ class AjaxHandler
         add_action('wp_loaded', [$handler, 'register_script']);
     }
 
-    public function register_script()
+    public function register_script(): void
     {
         wp_register_script('iching-ajax', ICHING_ASSETS_URL . '/js/main.js');
         wp_localize_script('iching-ajax', 'iching_ajax_data', $this->get_ajax_data());
         wp_enqueue_script('iching-ajax');
     }
 
-    private function get_ajax_data()
+    private function get_ajax_data(): array
     {
         return [
             'action' => self::ACTION,

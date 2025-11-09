@@ -1,11 +1,13 @@
 <?php
 
-namespace classes;
+namespace WP_Iching;
 
-use App\Divination;
 use Exception;
 
-class IchingPlugin
+/**
+ * Main plugin class.
+ */
+class Plugin
 {
     public function init(): void
     {
@@ -28,11 +30,11 @@ class IchingPlugin
     /**
      * @throws Exception
      */
-    public static function iching_output()
+    public static function iching_output(): string
     {
-        require_once __DIR__ . '/IchingTemplate.php';
+        require_once __DIR__ . '/Template.php';
 
-        return (new IchingTemplate())->getTemplate();
+        return Template::render();
     }
 
     public function load_assets(): void
@@ -60,8 +62,8 @@ class IchingPlugin
             $data
         );
 
+        // TODO include by condition
         wp_enqueue_style('iching');
-        wp_enqueue_script('jquery');
         wp_enqueue_script('iching');
     }
 }
