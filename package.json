@@ -1,0 +1,22 @@
+{
+  "name": "iching-wp-plugin",
+  "version": "1.0.1",
+  "description": "WordPress Plugin for I-Ching logic.",
+  "main": "iching-wp-plugin.php",
+  "scripts": {
+    "build:deps": "composer install --no-dev",
+    "build:zip": "node tools/build-zip.js",
+    "build": "npm run build:deps && npm run build:zip",
+    "clean": "rm -rf vendor && rm -f iching-wp-plugin.zip"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "composer"
+  ],
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "archiver": "^6.0.1"
+  }
+}
