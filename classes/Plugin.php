@@ -1,17 +1,16 @@
 <?php
 
-namespace classes;
+namespace WP_Iching;
 
-use App\Divination;
 use Exception;
 
-class IchingPlugin
+/**
+ * Main plugin class.
+ */
+class Plugin
 {
     public function init(): void
     {
-        require_once __DIR__ . '/core/vendor/autoload.php';
-        require_once __DIR__ . '/Ajax.php';
-
         add_action('wp_enqueue_scripts', [$this, 'load_assets']);
         $this->create_shortcode();
         (new Ajax())->setAjaxAction();
@@ -28,11 +27,9 @@ class IchingPlugin
     /**
      * @throws Exception
      */
-    public static function iching_output()
+    public static function iching_output(): string
     {
-        require_once __DIR__ . '/IchingTemplate.php';
-
-        return (new IchingTemplate())->getTemplate();
+        return Template::render();
     }
 
     public function load_assets(): void
@@ -60,8 +57,8 @@ class IchingPlugin
             $data
         );
 
+        // TODO include by condition
         wp_enqueue_style('iching');
-        wp_enqueue_script('jquery');
         wp_enqueue_script('iching');
     }
 }

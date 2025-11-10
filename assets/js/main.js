@@ -1,13 +1,3 @@
-// jQuery(document).ready(function() {
-//   var data = {
-//     'action': iching_ajax_data.action,
-//     '_ajax_nonce': iching_ajax_data.nonce
-//   };
-//
-//   jQuery.post(ajaxurl, data);
-// });
-
-
 jQuery(document).ready(function() {
   let button = jQuery('#iching-button');
   let againButton = jQuery('#iching-again-button');

@@ -1,19 +1,15 @@
 <?php
 
-namespace classes;
+namespace WP_Iching;
 
-use App\FortuneTeller\FortuneTeller;
+use Iching\Core\FortuneTeller\FortuneTeller;
 
 class Ajax
 {
     private array $hexagrames = [];
 
-    /**
-     * @throws \Exception
-     */
     public function __construct()
     {
-        $this->hexagrames = (new FortuneTeller())->index();
     }
 
     public function setAjaxAction(): void
@@ -22,9 +18,14 @@ class Ajax
         add_action('wp_ajax_get_divination', [$this, 'iching_ajax_get_divination']);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function iching_ajax_get_divination(): void
     {
         check_ajax_referer('title_example', 'nonce');
+
+        $this->hexagrames = (new FortuneTeller())->index();
 
         $primHex = $this->hexagrames['primaryHexagram'];
         $primData = !empty($this->hexagrames['primaryHexagramData']) ? $this->hexagrames['primaryHexagramData'] : [];
