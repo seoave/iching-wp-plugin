@@ -15,15 +15,15 @@
  * Requires Plugins: No
  */
 
+use WP_Iching\Plugin;
+
 if (!defined('ABSPATH')) {
     exit;
 }
 
 // Constants
-define( 'ICHING_ASSETS_URL', plugins_url( '/assets', __FILE__ ) );
+define('ICHING_ASSETS_URL', plugins_url('/assets', __FILE__));
 
-use WP_Iching\Plugin;
-
-require_once __DIR__ . '/classes/IchingPlugin.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 (new Plugin())->init();

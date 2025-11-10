@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "148edf03370b4e1e760d8aabdce6b720",
+    "packages": [
+        {
+            "name": "iching/core",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:seoave/iching.git",
+                "reference": "284c4284ae6f5a92e4392c8dcfc86a763728cb59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/seoave/iching/zipball/284c4284ae6f5a92e4392c8dcfc86a763728cb59",
+                "reference": "284c4284ae6f5a92e4392c8dcfc86a763728cb59",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Iching\\Core\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "Oleksandr Burkhan",
+                    "email": "seo.ave@gmail.com"
+                }
+            ],
+            "description": "Core Iching divination logic",
+            "time": "2025-11-10T00:14:21+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "iching/core": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}

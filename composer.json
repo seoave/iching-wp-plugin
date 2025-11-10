@@ -1,0 +1,25 @@
+{
+  "name": "seo_ave/iching-wp-plugin",
+  "description": "Plugin to implement Iching Divination Logic into WordPress",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Oleksandr Burkhan",
+      "email": "seoave@gmail.com"
+    }
+  ],
+  "require": {
+    "iching/core": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/seoave/iching.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "WP_Iching\\": "classes/"
+    }
+  }
+}

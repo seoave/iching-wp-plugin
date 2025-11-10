@@ -11,9 +11,6 @@ class Plugin
 {
     public function init(): void
     {
-        require_once __DIR__ . '/core/vendor/autoload.php';
-        require_once __DIR__ . '/Ajax.php';
-
         add_action('wp_enqueue_scripts', [$this, 'load_assets']);
         $this->create_shortcode();
         (new Ajax())->setAjaxAction();
@@ -32,8 +29,6 @@ class Plugin
      */
     public static function iching_output(): string
     {
-        require_once __DIR__ . '/Template.php';
-
         return Template::render();
     }
 
