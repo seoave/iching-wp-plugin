@@ -7,7 +7,8 @@
     "build:deps": "composer install --no-dev",
     "build:zip": "node tools/build-zip.js",
     "build": "npm run build:deps && npm run build:zip",
-    "clean": "rm -rf vendor && rm -f iching-wp-plugin.zip"
+    "clean": "rm -rf vendor && rm -f iching-wp-plugin.zip",
+    "prepare": "husky install"
   },
   "keywords": [
     "wordpress",
@@ -17,6 +18,8 @@
   "author": "",
   "license": "GPL-2.0-or-later",
   "devDependencies": {
-    "archiver": "^6.0.1"
+    "archiver": "^6.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6"
   }
 }
