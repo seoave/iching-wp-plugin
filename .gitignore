@@ -3,3 +3,5 @@
 /node_modules/
 # plugin zip archive to install
 iching-wp-plugin.zip
+phpcs.xml
+phpstan.neon

@@ -26,4 +26,4 @@ define('ICHING_ASSETS_URL', plugins_url('/assets', __FILE__));
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-(new Plugin())->init();
+(new Plugin())->init() ;

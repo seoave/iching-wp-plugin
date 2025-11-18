@@ -21,5 +21,27 @@
     "psr-4": {
       "WP_Iching\\": "classes/"
     }
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^2.1",
+    "squizlabs/php_codesniffer": "^3.13.5",
+    "wp-coding-standards/wpcs": "^3.2.0",
+    "phpstan/extension-installer": "^1.4",
+    "szepeviktor/phpstan-wordpress": "^2.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "scripts": {
+    "check:style": "vendor/bin/phpcs",
+    "fix:style": "vendor/bin/phpcbf",
+    "analyse:static": "vendor/bin/phpstan analyse",
+    "test:all": [
+      "@check:style",
+      "@analyse:static"
+    ]
   }
 }

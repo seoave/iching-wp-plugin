@@ -1,0 +1,15 @@
+parameters:
+    level: 9
+
+    paths:
+        - classes/
+        - iching-wp-plugin.php
+
+    excludePaths:
+        - vendor/*
+        - */tests/*
+        - */node_modules/*
+        - tools/*
+        - assets/*
+
+    phpVersion: 80200
