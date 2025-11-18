@@ -6,6 +6,9 @@ use Iching\Core\FortuneTeller\FortuneTeller;
 
 class Ajax
 {
+    /**
+     * @var array<string,string>
+     */
     private array $hexagrames = [];
 
     public function __construct()
@@ -14,14 +17,14 @@ class Ajax
 
     public function setAjaxAction(): void
     {
-        add_action('wp_ajax_nopriv_get_divination', [$this, 'iching_ajax_get_divination']);
-        add_action('wp_ajax_get_divination', [$this, 'iching_ajax_get_divination']);
+        add_action('wp_ajax_nopriv_get_divination', [$this, 'ichingAjaxGetDivination']);
+        add_action('wp_ajax_get_divination', [$this, 'ichingAjaxGetDivination']);
     }
 
     /**
      * @throws \Exception
      */
-    public function iching_ajax_get_divination(): void
+    public function ichingAjaxGetDivination(): void
     {
         check_ajax_referer('title_example', 'nonce');
 
@@ -49,7 +52,7 @@ class Ajax
         $primHtml = '<h3>Ваше передбачення</h3>';
         $primHtml .= '<h4>Початкова гексаграма: ' . $primHex . ' ' . $primName . '</h4>';
 
-        if(empty($primData)) {
+        if (empty($primData)) {
             $primHtml .= '<p>На жаль, зараз немає тлумачення для цієї гексаграми ' . $primHex . '</p>';
         } else {
             $primHtml = $this->getHexHtml(
@@ -64,11 +67,11 @@ class Ajax
 
         $secondHtml = '<h4>Фонова (вторинна) гексаграма: Іцзнь не бачить її для вас</h4>';
 
-        if($secondData) {
+        if ($secondData) {
             $secondHtml = '<h4>Фонова (вторинна) гексаграма: ' . $secondHex . ' ' . $secondName . '</h4>';
         }
 
-        if(empty($secondData)) {
+        if (empty($secondData)) {
             $secondHtml .= '<p>На жаль, зараз немає тлумачення для цієї гексаграми ' . $secondHex . '</p>';
         } else {
             $secondHtml = $this->getHexHtml(

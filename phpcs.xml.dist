@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
 <ruleset name="Iching-wp-plugin PSR12 rules">
-    <rule ref="PSR12"/>
-
     <file>./</file>
 
     <exclude-pattern>*/vendor/*</exclude-pattern>
@@ -11,4 +9,6 @@
     <arg name="colors"/>
     <arg value="nps"/>
     <arg name="extensions" value="php"/>
+
+    <rule ref="PSR12"/>
 </ruleset>
